@@ -3,7 +3,59 @@
 @import "reset";
 @import "global";
 
-
+.header{
+    padding: 40px 0;
+    &__inner-top{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.menu__list{
+    display: flex;
+    &-item + .menu__list-item{
+        padding-left: 35px;
+    }
+    &-item-link{
+        padding: 0 2px;
+        color: $title;
+        padding-bottom: 8px;
+        border-bottom: 1px solid transparent;
+        transition: all .3s;
+        @extend %quicksand-400;
+    }
+    &-item-link:hover{
+        color:$active;
+        border-bottom: 1px solid $active;
+        @extend %quicksand-500;
+    }
+    &-item-link--active{
+        color:$active;
+        border-bottom: 1px solid $active;
+        @extend %quicksand-500;
+    }
+}
+.user-nav{
+    display: flex;
+    &__link{
+        position: relative;
+    }
+    &__link + .user-nav__link{
+        padding-left: 25px;
+    }
+    &__num{
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background-color: $active;
+        top: -9px;
+        right: -14px;
+        font-size: 12px;
+        color: #fff;
+        text-align: center;
+        line-height: 20px;
+    }
+}
 
 @import "media";
 
